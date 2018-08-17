@@ -1,0 +1,7 @@
+关闭Chrome 安全策略跨域
+
+1、关闭chrome进程
+2、新建文件夹MyChromeDevUserData，文件夹名自定义，记住文件夹的路径
+3、找到chrome安装地址
+     右键chrome图标-->属性-->目标，就是文件的位置
+4、在文件名后面添加以下代码 --disable-web-security --user-data-dir=C:\MyChromeDevUserData（第二步文件夹的路径）

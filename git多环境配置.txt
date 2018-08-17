@@ -1,0 +1,34 @@
+系统中安装GIT
+
+
+通过下面命令生成公钥和私钥
+ssh-keygen -t rsa -C "邮箱"
+运行后会提示
+Enter file in which to save the key (/c/Users/dphah/.ssh/id_rsa):
+可以重置文件保存地址和文件名称
+执行后，会在设置的地址生成  对应当前邮箱  的rsa密钥文件，分为公钥和私钥
+
+
+在windows当前用户目录下，
+创建一个.ssh文件目录，如果有就不用创建，
+里面会保存两个文件，一个是私钥，一个是公钥文件，
+比如我这里就在C:\Users\{用户名}\.ssh
+可以在上一步生成密钥的时候就把地址指向C:\Users\{用户名}\.ssh
+
+
+在.ssh目录下创建config文件,配置一些信息
+# gitlab
+Host gitlab.jdhoe.com  --这个是真实的域名地址--保存项目的git服务器的域名
+HostName gitlab.jdhoe.com
+PreferredAuthentications publickey  --配置登录时用什么权限认证--可设为publickey,password publickey,keyboard-interactive等
+IdentityFile ~/.ssh/id_rsa  --这里是id_rsa的地址
+
+# github
+Host github.com  --这个是真实的域名地址--保存项目的git服务器的域名
+HostName github.com
+PreferredAuthentications publickey --配置登录时用什么权限认证--可设为publickey,password publickey,keyboard-interactive等
+IdentityFile ~/.ssh/id_rsa_github  --这里是id_rsa的地址
+
+
+配置完成后，打开Git Bash客户端，执行测试命令测试是否配置成功，会自动在.ssh目录生成known_hosts文件把私钥配置进去
+测试命令 ssh -T git@HostName（上面配置的HostName）
