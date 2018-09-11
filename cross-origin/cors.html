@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>cross-origin-resouce-share</title>
+</head>
+
+<body>
+
+  <a href="http://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank">cors详解</a>
+  <ul>
+    <li>不能低于IE10</li>
+  </ul>
+</body>
+<script>
+  var xhr = new XMLHttpRequest();
+  xhr.open('get', 'http://127.0.0.1/api/data', true);
+  xhr.send(null);
+  xhr.addEventListener('readystatechange', function (e) {
+    console.log(xhr.readyState, xhr.responseText)
+  })
+</script>
+
+</html>

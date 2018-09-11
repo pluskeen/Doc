@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>nginx跨域设置</title>
+</head>
+
+<body>
+  <p>nginx跨域设置</p>
+  <p>场景：本地开发环境与测试环境跨域</p>
+  <p>例如本地开发环境是127.0.0.1:8884，测试环境为127.0.0.1:8882</p>
+  <p>使用nginx设置代理，将两个环境放到同源环境中</p>
+  <code>
+    server {
+    listen 80;
+    server_name 127.0.0.1;
+
+    location / {
+    proxy_pass http://127.0.0.1:8884;
+    }
+
+    location ~ /api/ {
+    proxy_pass http://127.0.0.1:8882;
+    }
+    }
+  </code>
+  <p>访问127.0.0.1就可以实现跨域请求</p>
+  <p>注意：在本地开发环境中的接口域名需要设置为127.0.0.1</p>
+  <p>目的是为了让请求发出去时能被代理到测试环境</p>
+  <script>
+    var xhr = new XMLHttpRequest();
+    xhr.open('get', 'http://127.0.0.1/api/data', true);
+    xhr.send(null);
+    xhr.addEventListener('readystatechange', function (e) {
+      console.log(xhr.readyState, xhr.responseText)
+    })
+    var xhr = new XMLHttpRequest();
+    xhr.open('get', 'http://127.0.0.1/token', true);
+    xhr.send(null);
+    xhr.addEventListener('readystatechange', function (e) {
+      console.log(xhr.readyState, xhr.responseText)
+    })
+  </script>
+  <script>
+    var sg = sessionStorage.setItem('session', JSON.stringify({
+      a: 1
+    }))
+    var sg = localStorage.setItem('local', JSON.stringify({
+      a: 1
+    }))
+  </script>
+</body>
+
+</html>

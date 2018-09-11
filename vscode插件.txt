@@ -1,7 +1,5 @@
 auto close tag
 
-auto import   ×Ô¶¯ import ÒÀÀµ
-
 auto rename tag
 
 better align

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jsonp</title>
+</head>
+
+<body>
+  jsonp跨域测试
+  <h3>优点</h3>
+  <ul>
+    <li>兼容大部分浏览器，包括古老的浏览器</li>
+    <li>不受同源策略影响</li>
+    <li>不需要XmlHttpRequest或者ActiveXObject支持</li>
+  </ul>
+  <h3>缺点</h3>
+  <ul>
+    <li>只支持GET请求</li>
+    <li>传参写在URL上</li>
+    <li>不支持页面间传参</li>
+  </ul>
+</body>
+<script>
+  var cb = function (data) {
+    console.log('获取返回数据', data);
+    var script = document.querySelector('.jsonp');
+    script.parentElement.removeChild(script)
+    console.log('删除jsonp标签');
+  }
+  var script = document.createElement('script');
+  var html = document.querySelector('body');
+  script.src = 'http://127.0.0.1:8882?callback=cb&req=123';
+  script.setAttribute('class', "jsonp");
+  html.appendChild(script);
+</script>
+
+</html>
