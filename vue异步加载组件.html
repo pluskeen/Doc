@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>vue异步加载组件</title>
+</head>
+<body>
+  <section>
+    <p>背景介绍：</p>
+    <p></p>
+  </section>
+  在Vuex中进行懒加载
+Vuex的registerModule方法允许我们动态的创建Vuex的模块。如果我们使用import函数在Promise中返回模块作为载荷（payload），就实现了懒加载。
+
+const store = new Vuex.Store()
+
+...
+
+// 假设我们想加载'login'这个模块
+import('./store/login').then(loginModule => {
+  store.registerModule('login', loginModule)
+})
+</body>
+</html>
