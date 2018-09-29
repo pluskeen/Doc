@@ -1,0 +1,8 @@
+// Êı×éºáÊú×ª»»
+    arrayTrans(arr) {
+        return arr[0].map(function (col, i) {
+            return arr.map(function (row) {
+                return row[i];
+            })
+        });
+    }
