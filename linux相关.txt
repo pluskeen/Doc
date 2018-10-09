@@ -1,0 +1,8 @@
+修改root密码
+输入命令 passwd
+会提示输入新密码和再次输入新密码
+
+
+Xshell连接服务器报 The remote SSH server rejected X11 forwarding request
+在Xshell连接配置中关闭X11服务
+配置中找到 Connection -> SSH -> Tunneling : X11 Forwarding 关闭
