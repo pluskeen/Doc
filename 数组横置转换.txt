@@ -1,8 +1,8 @@
-// �������ת��
-    arrayTrans(arr) {
-        return arr[0].map(function (col, i) {
-            return arr.map(function (row) {
-                return row[i];
-            })
-        });
-    }
+数组横置转换
+arrayTrans(arr) {
+  return arr[0].map(function (col, i) {
+    return arr.map(function (row) {
+         return row[i];
+    })
+  });
+}
