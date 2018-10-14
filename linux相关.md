@@ -34,3 +34,17 @@ ssh的配置文件路径 `/etc/ssh/sshd_config`
 例 `mv oldname newname`
 
 将 **oldname** 文件移动到当前目录的 **newname** 文件中，实现重命名效果
+
+***
+
+## 使用Xshell上传下载文件 ##
+
+安装 **lrzsz**
+
+`yum install lrzsz`
+
+安装完毕后可以使用`rz`或`sz`命令
+
+命令`rz`，用于接收文件，Xshell就会弹出文件选择对话框，选好文件之后关闭对话框，文件就会上传到linux里的当前目录
+
+命令`sz file`，file是下载到本地的文件名，Xshell会弹出保存文件目录选择对话框，文件就会下载到所选目录中
