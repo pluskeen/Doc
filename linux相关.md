@@ -44,6 +44,8 @@ ssh的配置文件路径 `/etc/ssh/sshd_config`
 
 `yum install lrzsz`
 
+`apt-get install lrzsz`
+
 安装完毕后可以使用`rz`或`sz`命令
 
 命令`rz`，用于接收文件，Xshell就会弹出文件选择对话框，选好文件之后关闭对话框，文件就会上传到linux里的当前目录
