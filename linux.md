@@ -64,3 +64,26 @@ ssh的配置文件路径 `/etc/ssh/sshd_config`
 `-r` 向下递归，不管有多少级目录，一并删除
 
 `-f` 直接强行删除，不作任何提示
+
+
+***
+
+## 永久设置环境变量 ##
+
+在root目录中查看.bash_profile文件，找到类似开头是*PATH=$PATH:$HOME/bin*的关键行
+
+查看命令 `cat .bash_profile`
+
+修改在.bash_profile文件中找到的关键行
+
+进入编辑器 `vim .bash_profile` 
+
+在关键行后面新增环境变量，例如*:/var/software/bin*
+
+修改后的关键行类似*PATH=$PATH:$HOME/bin:/var/software/bin*
+
+保存后重载该文件
+
+重载命令 `source ~/.bash_profile`
+
+完成后就可以在任何目录下执行设置后的命令
