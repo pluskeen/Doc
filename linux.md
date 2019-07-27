@@ -78,7 +78,7 @@ ssh的配置文件路径 `/etc/ssh/sshd_config`
 
 进入编辑器 `vim .bash_profile` 
 
-在关键行后面新增环境变量，例如*:/var/software/bin*
+在关键行后面新增环境变量，例如 *:/var/software/bin*
 
 修改后的关键行类似*PATH=$PATH:$HOME/bin:/var/software/bin*
 
