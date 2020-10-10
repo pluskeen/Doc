@@ -1,7 +1,10 @@
 数组横置转换
+arr 是二维数组
+子数组长度需要相同
+
 arrayTrans(arr) {
-  return arr[0].map(function (col, i) {
-    return arr.map(function (row) {
+  return arr[0].map((col, i) => {
+    return arr.map((row) => {
          return row[i];
     })
   });
