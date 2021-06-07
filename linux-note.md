@@ -16,17 +16,6 @@
 
 ***
 
-## 修改ssh端口 ##
-
-ssh的配置文件路径 `/etc/ssh/sshd_config`
-
-修改ssh_config文件中的 **port**
-
-重启ssh服务 `systemctl restart sshd.service`
-
-
-***
-
 ## 修改文件名 ##
 
 可使用命令`mv`
